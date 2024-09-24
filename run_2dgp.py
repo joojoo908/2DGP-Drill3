@@ -57,8 +57,6 @@ def run_leftup():
     for x in range(800,400,-10):
         y=y+10*math.sin(90/360*2*math.pi)
         run_back(frame,x,y,120)
-        if x==410:
-            print(y)
         frame = (frame+1)%8
         
 def run_leftdown():
@@ -68,18 +66,18 @@ def run_leftdown():
         y=y-10*math.sin(90/360*2*math.pi)
         run_back(frame,x,y,210)
         frame = (frame+1)%8
+while 1:
+    run_forward(400,800)
+    run_leftup()
+    run_leftdown()
+    run_forward(0,400)
+    
+    run_forward(400,800)
+    run_up()
+    run_backward()
+    run_down()
+    run_forward(0,400)
 
-run_forward(400,800)
-run_leftup()
-run_leftdown()
-run_forward(0,400)
-
-run_forward(400,800)
-run_up()
-run_backward()
-run_down()
-run_forward(0,400)
-
-run_circle()
+    run_circle()
     
 close_canvas()
